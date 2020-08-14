@@ -294,7 +294,7 @@ class RandomizedSplitBrainResolverIntegrationSpec
               i -> (from -> to)
             }.toMap
 
-          val delays = (0 until 10).map(_ => 4 + random.nextInt(10))
+          val delays = (0 until 10).map(_ => 2 + random.nextInt(13))
 
           log.info(
             s"Generated $scenario with random seed [$randomSeed] in round [$c]: " +
@@ -399,8 +399,7 @@ class RandomizedSplitBrainResolverIntegrationSpec
   }
 
   val scenarios =
-    List(Scenario(leaseMajorityConfig, 3))
-  //List(Scenario(leaseMajorityConfig, 3), Scenario(leaseMajorityConfig, 5), Scenario(leaseMajorityConfig, 9))
+    List(Scenario(leaseMajorityConfig, 3), Scenario(leaseMajorityConfig, 5), Scenario(leaseMajorityConfig, 9))
 
   "SplitBrainResolver with lease" must {
 
